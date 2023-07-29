@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Hibernate dtd -->
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+		<!-- dialect mtlb bhasha hr database ki alg language hoti h to mysql ka 
+			dialect use kr rhe h to vo dena pdega -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!--br br tables nhi bnana h to update use krenge /or agr testing ke liye 
+			use kr rhe h or br br create krna h table to create ka use krenge -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!--konsi query fire kr rha h ise dekhne ke liye show_sql ka use krenge 
+			or agr true denge to sql query dikhayega bhi -->
+		<property name="show_sql">true</property>
+		<property name="formate_sql">true</property>
+		<mapping class="com.entites.Note"/>
+	</session-factory>
+</hibernate-configuration>
